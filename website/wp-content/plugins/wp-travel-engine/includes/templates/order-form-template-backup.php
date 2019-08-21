@@ -384,18 +384,7 @@
 		// $_SESSION = $_POST;
 		do_action( 'wte_cross_sell', $trip_id ); ?>
 	</div>
-	
-	
-	
-	
-	
-	
 	<form method="post" id="wp-travel-engine-order-form" method="post" name="wp-travel-engine-order-form" action="<?php echo esc_url($wp_travel_engine_confirm);?>">
-	
-
-	
-	
-	
 		<div id="price-loader" style="display: none">
             <div class="table">
                 <div class="table-row">
@@ -405,19 +394,12 @@
                 </div>
             </div>
         </div>
-		
-		
-		
-		
-		
-		
-		
-<!-- <div class="order-submit">
+		<div class="order-submit">
 			<?php
 			do_action('wte_payment_gateways_dropdown');
 			?>
 			<input type="hidden" name="wp_travel_engine_booking_setting[place_order][datetime]" value="<?php echo esc_attr( $datetime );?>">
-		</div> -->
+		</div>
 		<div class="place-order-form-primary-wrapper">
 			<div class="wp-travel-engine-billing-details">
 				<div class='relation-options-title'><?php $billing_details = __('Billing Details: ','wp-travel-engine'); echo apply_filters( 'wpte_billings_details_title',$billing_details);?></div>
@@ -522,25 +504,7 @@
 			<?php 
 			$confirm_booking = __('Confirm Booking','wp-travel-engine');
 			?>
-			<input type="submit" class="wp-travel-engine-submit" name="wp-travel-engine-submit" value="<?php echo apply_filters('wpte_confirm_bookig_button', $confirm_booking);?>"> 
-		
-			<!--<script
-				src="https://checkout.razorpay.com/v1/checkout.js"
-				data-key="rzp_test_uu0iAhh9ajXATt" 
-				data-amount="<?php echo $tcost*100;?>"
-				data-currency="INR"
-				
-				data-buttontext="Pay with Razorpay"
-				data-name="<?php echo get_the_title( $pid );?>"
-				data-description="<?php echo esc_attr( $datetime );?>"
-				data-image="<?php echo get_the_post_thumbnail($pid,'medium',''); ?>"
-				data-buttonclass="wp-travel-engine-submit"
-				data-theme.color="#F37254"
-			></script>
-			<input type="hidden" custom="Hidden Element" name="hidden">
-		 -->
-		
-		
+			<input type="submit" class="wp-travel-engine-submit" name="wp-travel-engine-submit" value="<?php echo apply_filters('wpte_confirm_bookig_button', $confirm_booking);?>">
 			<div id="submit-loader" style="display: none">
                 <div class="table">
                     <div class="table-row">
@@ -552,9 +516,5 @@
             </div>
 			<?php do_action( 'wte_up_sell', $trip_id ); ?>
 	</form>
-	
-	
-	
-	
 	<?php do_action('wte_paypalexpress_form'); ?>
 	<?php do_action('paypal_checkbox'); ?>
